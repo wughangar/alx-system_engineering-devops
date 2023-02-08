@@ -1,1 +1,1 @@
-lsiting all files in /boot directoryn
+script to print a specific filen
