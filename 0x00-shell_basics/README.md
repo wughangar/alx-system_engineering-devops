@@ -1,1 +1,1 @@
-script to change directory to previous onen
+lsiting all files in /boot directoryn
