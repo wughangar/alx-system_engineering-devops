@@ -1,1 +1,1 @@
-script for idplaying hidden files inn
+Display current directory contents
