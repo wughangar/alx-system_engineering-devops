@@ -1,1 +1,1 @@
-Display current directory contents
+creating a directory inside a directoryn
