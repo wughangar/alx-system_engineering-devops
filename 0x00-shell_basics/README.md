@@ -1,1 +1,1 @@
-cript for absolute path for working directoryn
+command to list curent directory\n
