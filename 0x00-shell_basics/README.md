@@ -1,1 +1,1 @@
-command to list curent directory\n
+script that changes working directory to homen
