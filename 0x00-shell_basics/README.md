@@ -1,1 +1,1 @@
-script to print a specific filen
+a symbolic link to /bin/ls, named __ls__n
