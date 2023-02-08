@@ -1,1 +1,1 @@
-deleting a directoryn
+deleting first directoryn
