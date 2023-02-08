@@ -1,1 +1,1 @@
-deleting first directoryn
+script to change directory to previous onen
