@@ -1,2 +1,2 @@
-permission script
+script for setting permissions
 
