@@ -1,1 +1,1 @@
-script to change owner of filen
+script to create empty filen
