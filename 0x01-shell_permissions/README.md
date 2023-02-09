@@ -1,2 +1,2 @@
-script for setting permissions
+script that adds execute permission to all subdirectories
 
