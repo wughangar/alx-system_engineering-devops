@@ -1,1 +1,1 @@
-script to show what group user belongs ton
+script to change owner of filen
