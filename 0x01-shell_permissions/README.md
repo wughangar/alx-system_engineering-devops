@@ -1,2 +1,2 @@
-permission to execute command
+permission to others
 
