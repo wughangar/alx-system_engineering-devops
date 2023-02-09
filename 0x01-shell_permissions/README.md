@@ -1,2 +1,2 @@
-script for execute permission
+permission to execute command
 
