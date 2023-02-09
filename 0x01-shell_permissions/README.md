@@ -1,1 +1,1 @@
-switching current user to bettyn
+script that prints effective name of current usern
