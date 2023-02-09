@@ -1,2 +1,2 @@
-permission to others
+permission script
 
