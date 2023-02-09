@@ -1,2 +1,2 @@
-execute permission script
+script for execute permission
 
