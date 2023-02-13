@@ -1,2 +1,2 @@
-script to count
+display specific worrd and lines after that
 
