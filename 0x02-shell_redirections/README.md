@@ -1,2 +1,2 @@
-script duplicating last line
+script to delete files
 
