@@ -1,2 +1,2 @@
 #!/bin/bash
-tr 'Aac' 'Zee'
+tr Ac Ze
