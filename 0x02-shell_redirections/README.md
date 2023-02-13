@@ -1,2 +1,2 @@
-replace
+remove c from input
 
