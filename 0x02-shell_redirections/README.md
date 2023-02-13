@@ -1,2 +1,2 @@
-script to delete files
+script to count dirctories
 
