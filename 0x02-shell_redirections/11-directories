@@ -1,2 +1,2 @@
- #!/bin/bash
-find . -mindepth 2 -type d -not -name ".*" | wc -l
+#!/bin/bash
+find . -type d ! -path . ! -path .. -name ".*" -o -name "*" | wc -l
