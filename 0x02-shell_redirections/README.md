@@ -1,2 +1,2 @@
-script to count dirctories
+listing new file
 
