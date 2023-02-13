@@ -1,2 +1,2 @@
-display all line
+script to diplay lines with letter
 
