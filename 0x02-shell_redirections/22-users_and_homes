@@ -1,2 +1,2 @@
 #!/bin/bash
-sort users /etc/passwd
+cat sort 22-users_and_homes
