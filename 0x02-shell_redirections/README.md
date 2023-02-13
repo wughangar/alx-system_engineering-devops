@@ -1,2 +1,2 @@
-command to display last 10lines
+script to print last lines
 
