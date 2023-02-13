@@ -1,2 +1,2 @@
-script to echo hello world
+script to print confused smiley emoji
 
