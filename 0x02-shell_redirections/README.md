@@ -1,2 +1,2 @@
-script to find third line
+script for create file and text
 
