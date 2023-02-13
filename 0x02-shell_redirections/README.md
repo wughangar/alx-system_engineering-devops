@@ -1,2 +1,2 @@
-script for creatimg file and text
+script duplicating last line
 
