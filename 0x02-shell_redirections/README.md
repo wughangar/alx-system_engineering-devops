@@ -1,2 +1,2 @@
-remove c from input
+script for reverse
 
