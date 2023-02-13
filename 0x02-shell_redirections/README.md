@@ -1,2 +1,2 @@
-script to print confused smiley emoji
+script to list file password
 
