@@ -1,2 +1,2 @@
-script for create file and text
+script for creatimg file and text
 
