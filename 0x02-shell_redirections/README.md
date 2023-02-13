@@ -1,2 +1,2 @@
-script to list file password
+script to print contents of two files
 
