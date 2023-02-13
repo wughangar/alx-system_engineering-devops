@@ -1,2 +1,2 @@
 #!/bin/bash
-rm .js .
+find . -type f -name "*.js" -exec rm {} \; && [ $(find . -type f -name "*.js" | wc -l) -eq 0 ] && echo "All .js files were deleted successfully" || echo "Not all .js files were deleted"
