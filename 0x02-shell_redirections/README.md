@@ -1,2 +1,2 @@
-script to print last lines
+script to find third line
 
