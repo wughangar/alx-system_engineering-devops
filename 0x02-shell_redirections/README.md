@@ -1,2 +1,2 @@
-script to find a pattern root
+script to count
 
