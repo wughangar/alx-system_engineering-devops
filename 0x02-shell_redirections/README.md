@@ -1,2 +1,2 @@
-script to print contents of two files
+command to display last 10lines
 
