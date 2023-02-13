@@ -1,2 +1,2 @@
-display specific worrd and lines after that
+display all line
 
