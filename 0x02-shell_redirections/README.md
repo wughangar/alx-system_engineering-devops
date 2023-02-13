@@ -1,2 +1,2 @@
-printing unique words
+script to find a pattern root
 
