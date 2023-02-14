@@ -1,2 +1,2 @@
-script to add action to path
+script to count directories in path
 
