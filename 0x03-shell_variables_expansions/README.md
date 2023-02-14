@@ -1,2 +1,2 @@
-script for hello user
+script to add action to path
 
