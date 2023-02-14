@@ -1,2 +1,2 @@
-script for an alias
+script for hello user
 
