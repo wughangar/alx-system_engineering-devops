@@ -1,2 +1,1 @@
-script to list enviroments
-
+script that creates a new global variable
