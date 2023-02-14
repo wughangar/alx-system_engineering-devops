@@ -1,2 +1,2 @@
 #!/bin/bash
-count -d PATH
+echo $PATH | awk -F':' '{print NF}'
