@@ -1,2 +1,2 @@
 #!/bin/bash
-compgen -v compgen -e compgen -A function
+declare -p | cut -d ' ' -f 3- | sed 's/^/export /' ; declare -F | cut -d ' ' -f 3-
