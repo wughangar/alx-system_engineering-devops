@@ -1,0 +1,2 @@
+script for an alias
+
