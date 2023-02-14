@@ -1,2 +1,2 @@
-script that creates a new global variable
+script to createthat creates a new local variable
 
