@@ -1,2 +1,2 @@
-script for base
+script that prints possible combinations
 
