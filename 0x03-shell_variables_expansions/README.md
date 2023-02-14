@@ -1,2 +1,2 @@
-script to count directories in path
+script to list enviroments
 
