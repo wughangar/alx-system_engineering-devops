@@ -1,2 +1,2 @@
-scriot that prints a number wuth two decimal places
+script for list of local variable and functions
 
