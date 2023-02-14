@@ -1,2 +1,2 @@
-script for power
+script for base
 
