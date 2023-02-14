@@ -1,2 +1,2 @@
-script to add
+script for division
 
