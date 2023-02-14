@@ -1,2 +1,2 @@
-script for division
+script for power
 
