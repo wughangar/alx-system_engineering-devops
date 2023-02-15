@@ -1,2 +1,2 @@
 #!/bin/bash
-read -p "Enter words: " words tr ' ' '\n' <<< "$words" | sort | uniq -u
+tr ' ' '\n' | sort | uniq -c | awk '$1 == 1 {print $2}'
