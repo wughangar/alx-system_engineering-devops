@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type d ! -path . ! -path .. -name ".*" -o -name "*" | wc -l
+find . -type d ! -path . -print | wc -l
