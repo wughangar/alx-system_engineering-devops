@@ -1,2 +1,2 @@
-lat ten lines 
+script for emoji
 
