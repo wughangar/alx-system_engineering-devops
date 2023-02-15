@@ -1,2 +1,2 @@
 #!/bin/bash
-cat sort 22-users_and_homes
+ls $USERS /etc/passwd  | sort 
