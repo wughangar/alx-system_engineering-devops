@@ -3,16 +3,14 @@
 fname="school"
 if [[ -e "$fname" ]]; then
     echo "school file exists"
-else
-    echo "school file does not exist"
-fi
-if [[ -s "$fname" ]]; then
-	echo "school file is empty"
-else
-	echo "school file is not empty"
-fi
-if [[ -f "$fname" ]]; then
+    if [[ -s "$fname" ]]; then
+	    echo "school file is empty"
+    else
+	    echo "school file is not empty"
+    fi
+    if [[ -f "$fname" ]]; then
 	echo "school is a regular file"
+    fi
 else
-	echo ""
+	echo "school file does not exist"
 fi
