@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#script that prints the contents of the directory
+for i in *; do
+	if [[ -f "$i" && ! "$i" =~ ^\. ]]; then
+		fname=$(echo "$i" | cut -d '-' -f 2-)
+		echo "$fname"
+	fi
+done
