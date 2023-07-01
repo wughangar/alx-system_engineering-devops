@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-ps -C bash
+#bash script that prints all lines containing bash
 # shellcheck disable=SC2009
+ps -C bash
