@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Bash script that displays the PID, along with the process name, process name should include bash
+name=$(grep -l "bash" /proc/*/status)
+for i in $name; do
+	pid=$(basename "$(dirname "$i")")
+	proc_name=$(grep -s "Name:" "$i" | awk '{print $2}')
+	echo "$pid $proc_name"
+done
