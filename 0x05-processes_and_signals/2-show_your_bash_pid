@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #bash script that prints all lines containing bash
 # shellcheck disable=SC2009
-ps -C bash
+ps -ef | grep bash
