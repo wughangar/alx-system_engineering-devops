@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#scrip that displays indefinetly with a sleep 2
+while true; do
+echo "To infinity and beyond"
+sleep 2
+done
