@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #script that echos a string when it receives a sigterm
 command="echo 'I am invincible!!!'"
-trap "$command" SIGTERM
+trap '$command' SIGTERM
 while true; do
 	echo "To inifnity and beyond"
 	sleep 2
