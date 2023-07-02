@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 #script that echos a string when it receives a sigterm
-handle_signal()
-{
-	echo "I am invincible!!!"
-	exit 0
-}
-if trap handle_signal SIGTERM; then
-	while true; do
-		echo "To infinity and beyond"
-		sleep 2
-	done
-fi
+command="echo 'I am invincible!!!'"
+trap "$command" SIGTERM
+while true; do
+	echo "To inifnity and beyond"
+	sleep 2
+done
