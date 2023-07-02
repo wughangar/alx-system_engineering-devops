@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #script to stop a process without using kill or killall
-pname="7-highlander"
+pname="4-to_infinity_and_beyond"
 pkill -f "$pname"
