@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 #script that echos a string when it receives a sigterm
-function deal_sigterm{
-echo "I am invincible!!!"
-exit 0
+function deal_sigterm
+{
+	echo "I am invincible!!!"
+	exit 0
 }
 
 trap deal_sigterm SIGTERM
