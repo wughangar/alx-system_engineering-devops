@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#bash script that displays listeing sockets and pid and name of the program socket
+netstat -tulpn | grep LISTEN
