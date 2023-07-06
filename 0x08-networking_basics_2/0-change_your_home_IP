@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#script that configers ubuntu server
+cat /etc/host |grep -v
+"localhost" |grep -v
+"facebook.com" > /etc/hosts2
+echo "127.0.0.2 localhost" >> /etc/hosts2
+echo "8.8.8.8 facebook.com" >> /etc/hosts2
+cp -f /etc/hosts2 /etc/hosts
