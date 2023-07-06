@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#bash script that shows all active ipv4 on the machine
+ip_add=$(ifconfig | grep "inet" | awk '{print $2}')
+for ip in $ip_add; do
+	echo "$ip"
+done
