@@ -4,12 +4,13 @@ Server - Its a physical machine or virtual instance that hosts the entire web in
     serving web pages
     processing requests
     managing the application
+it is an operating system installed and usually loacted in a data center.
 
 Domain name - is a human readable address/text used to access the website. ie foobar.com. it is the configured to a systems public ip adress. 
 
 DNS record type- 'www':
     its a DNS CNAME record. its an alias the points to the main/ root domain. CNAME record allows users to access websites from alias and root name, ir- www.foobar.com or foobar.com
-
+DNS translates into an ip adress with a record type of A. the domain name has an ip address mapped to it.
 Web Server (Nginx):
 The web server (Nginx) handles incoming HTTP requests from the users' web browsers. It serves static content and forwards dynamic requests to the application server.
 
