@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# script that uses ssh to connect to your server using private key
+
+private_key_path="~/.ssh/school"
+server_address="intranet.alxswe.com"
+
+ssh -i "$private_key_path" "ubuntu@$server_address"
