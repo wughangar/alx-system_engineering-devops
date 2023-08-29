@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-#  using Puppet to make changes to our configuration file
+#!/usr/bin/env
 
 file { '/root/.ssh/config':
 ensure  => present,
