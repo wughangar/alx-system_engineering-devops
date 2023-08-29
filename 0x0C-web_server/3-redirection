@@ -1,9 +1,20 @@
 #!/usr/bin/env bash
 # install nginx webserver and redierect
 
+#!/usr/bin/env bash
+# Install nginx web server
 sudo apt-get update
 sudo apt-get -y install nginx
 
-sudo sed -i 's/listen 80;/listen 80 default_server;\n\n    location \/redirect_me {\n        return 301 https:\/\/wughangar.tech\/another_page;\n    }/g' /etc/nginx/sites-available/default
+# Configure Nginx to listen on port 80
+sudo sed -i 's/listen 80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
 
+# Configure your Nginx server so that /redirect_me is redirecting to another page.
+sudo sed -i '/server_name _;/a \\n        location /redirect_me {\n            return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n        }\n\
+' /etc/nginx/sites-available/default
+
+# Create a custom HTML page
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+
+# Restart Nginx
 sudo service nginx restart
