@@ -1,4 +1,5 @@
-i# 7-puppet_install_nginx_web_server.pp
+#!/usr/bin/env bash
+# 7-puppet_install_nginx_web_server.pp
 
 package { 'nginx':
   ensure => installed,
