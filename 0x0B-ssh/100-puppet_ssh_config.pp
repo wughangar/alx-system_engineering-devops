@@ -1,5 +1,13 @@
-#!/usr/bin/puppet
+# configurations usings puppet
 
-file { '/root/.ssh/config':
-  ensure  => present,
-  content => "Host 34.207.190.83\n IdentityFile ~/.ssh/school\n PasswordAuthentication no\n",}
+file { '/root/.ssh':
+  ensure => directory,
+  mode   => '0700',
+}
+
+file{'/root/.ssh/config':
+ensure  => file,
+content => "Host server\n
+      IdentityFile ~/.ssh/school\n
+      PasswordAuthentication no\n",
+}
