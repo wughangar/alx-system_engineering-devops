@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# commands used to create and run docker container
+
+402  netstat -tuln | grep 8080\n
+  403  docker run -p 8080:80 -d -it holbertonschool/265-0\n
+  404  curl localhost:8080\n
+  405  docker ps
+  406  docker logs 4acabfe69dca
+  407  docker logs 4acabfe69dca
+  408  docker exec it 4acabfe69dca /bin/bash
+  409  docker exec -it 4acabfe69dca /bin/bash
+  410  docker ps
+  411  curl 8080
+  412  ifconfig
+  413  docker logs
+  414  docker ps
+  415  docker logs 4acabfe69dca
+  416  docker exec -it 4acabfe69dca /bin/bash\n
+  417  curl localhost:8080
