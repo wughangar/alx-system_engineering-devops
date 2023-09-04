@@ -5,6 +5,18 @@ sudo apt update
 sudo apt install -y nginx
 
 
+# Configure Nginx to listen on port 80
+sudo sed -i 's/listen 80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+
+# Configure your Nginx server so that /redirect_me is redirecting to another page.
+sudo sed -i '/server_name _;/a \\n        location /redirect_me {\n            return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n        }\n' /etc/nginx/sites-available/default
+
+# Create a custom HTML page
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+
+# Create a custom 404 page not found
+sudo sed -i '/server_name _;/a \\n        error_page 404 /404.html;\n        location = /404.html {\n            internal;\n            return 404 "Ceci n'\''est pas une page.";\n        }' /etc/nginx/sites-available/default
+
 #defining the custom nginx response header
 echo "location / {
    # adding custome response header
