@@ -8,7 +8,7 @@ sudo apt install -y nginx
 #defining the custom nginx response header
 echo "location / {
    # adding custome response header
-   add_header X-Served-By $hostname;
+   add_header X-Served-By \$hostname;
 }" | sudo tee /etc/nginx/sites-available/custom_header
 # creating a symbolic link 
 sudo ln -s /etc/nginx/sites-available/custom_header /etc/nginx/sites-enabled/
