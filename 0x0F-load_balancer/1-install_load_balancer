@@ -5,7 +5,7 @@
 sudo apt update
 sudo apt install -y haproxy
 
-sudo tee /etc/haproxy/haproxy.cfg > /dev/null <<EOL
+sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null <<EOL
 
 frontend http-in
    bind *:80
