@@ -7,7 +7,7 @@ sudo apt install -y haproxy
 
 sudo tee /etc/haproxy/haproxy.cfg > /dev/null <<EOL
 
-frontend htt-in
+frontend http-in
    bind *:80
    default_backend servers
 
