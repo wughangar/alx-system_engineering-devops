@@ -15,4 +15,4 @@ if [ -f "$file" ]; then
 fi
 
 # restarting server to apply changes
-sudo service nginx restart
+sudo systemctl nginx restart
