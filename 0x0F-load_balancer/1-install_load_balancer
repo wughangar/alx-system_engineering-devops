@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # configuring the load balancer with HAproxy
 
-# update and install HAProxy
-sudo apt update
+sudo apt-get install --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.8
 
-# check of nginx is installed
-if ! commad -v haproxy &> /dev/null
-then
-	sudo apt install -y haproxy
-fi
+# update and install HAProxy
+sudo apt-get -y update
+
+# if haproxy not installed
+sudo apt-get install -y haproxy=2.8.\*
 
 # configure haproxy
-sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null <<EOL
+sudo sed /etc/haproxy/haproxy.cfg > /dev/null <<EOL
 
 frontend http-in
    bind *:80
@@ -28,5 +28,4 @@ sudo systemctl enable haproxy
 
 #restarts the HAProxy
 sudo systemctl restart haproxy
-
-exit 0
+~                                              
