@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # update and install nginx
-
 sudo apt-get update
 sudo apt-get -y install nginx
 
@@ -9,7 +8,7 @@ file="/etc/nginx/sites-available/default"
 name="X-Served-By"
 header="$(hostname)"
 
-# ensure the file exists
+# ensure the file exists and append the custom http
 if [ -f "$file" ]; then
     sudo sed -i "/server_name _;/a \ \n    add_header $name \"$header\";" "$file"
 fi
