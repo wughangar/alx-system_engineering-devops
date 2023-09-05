@@ -10,7 +10,7 @@ header="$(hostname)"
 
 # ensure the file exists and append the custom http
 if [ -f "$file" ]; then
-    sudo tee -a "/server_name _;/a \ \n    add_header $name \"$header\";" "$file"
+    sudo sed -i "/server_name _;/a \ \n    add_header $name \"$header\";" "$file"
 fi
 
 # restarting server to apply changes
