@@ -22,6 +22,6 @@ backend servers
 "
 
 # Add the configurations to .cfg
-echo "$configurations" >> /etc/haproxy/haproxy.cfg
+echo "$configurations" | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
 
-sudo service haproxy start
+sudo service haproxy restart
