@@ -3,8 +3,14 @@
 
 # update and install HAProxy
 sudo apt update
-sudo apt install -y haproxy
 
+# check of nginx is installed
+if ! commad -v haproxy &> /dev/null
+then
+	sudo apt install -y haproxy
+fi
+
+# configure haproxy
 sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null <<EOL
 
 frontend http-in
