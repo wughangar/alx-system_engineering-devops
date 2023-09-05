@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Install nginx web server
-sudo apt-get update
-sudo apt-get -y install nginx
+# creating a custom nginx response header
+# Update and install nginx
+sudo apt update
+sudo apt install -y nginx
 
 # Configure Nginx to listen on port 80
 sudo sed -i 's/listen 80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
@@ -15,19 +16,11 @@ echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
 # Create a custom 404 page not found
 sudo sed -i '/server_name _;/a \\n        error_page 404 /404.html;\n        location = /404.html {\n            internal;\n            return 404 "Ceci n'\''est pas une page.";\n        }' /etc/nginx/sites-available/default
 
-# Define the custom header name and value
-custom_header_name="X-Served-By"
-custom_header_value="$(hostname)"
-
-# Define the Nginx configuration file path
-nginx_config_file="/etc/nginx/sites-available/default"
-
-# Check if the Nginx configuration file exists
-if [ -f "$nginx_config_file" ]; then
-    # Use sed to add the custom header to the Nginx configuration file
-    sudo sed -i "/server_name _;/a \ \n    add_header $custom_header_name \"$custom_header_value\";" "$nginx_config_file"
-
-fi
+# Define the custom header directly in the default configuration file
+echo "location / {
+   # adding custom response header
+   add_header X-Served-By \$hostname;
+}" | sudo sed -i '/server_name _;/a \\n' /etc/nginx/sites-available/default
 
 # Restart Nginx
 sudo service nginx restart
