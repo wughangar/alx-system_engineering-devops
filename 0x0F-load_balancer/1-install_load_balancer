@@ -2,11 +2,11 @@
 # Installing haproxy server - latest version
 
 # update and ugrade server if needed
-apt-get -y update
-apt-get -y upgrade
+sudo apt-get -y update
+sudo apt-get -y upgrade
 
 # Install latest haproxy
-apt-get -y install haproxy
+sudo apt-get -y install haproxy
 
 # haproxy configurations
 configurations="\
