@@ -21,7 +21,7 @@ sudo sed -i '/server_name _;/a \\n        error_page 404 /404.html;\n        loc
 echo "location / {
    # adding custome response header
    add_header X-Served-By \$hostname;
-}" | sudo sed /etc/nginx/sites-available/custom_header
+}" | sudo sed -i /etc/nginx/sites-available/custom_header > /dev/null
 # creating a symbolic link 
 sudo ln -s /etc/nginx/sites-available/custom_header /etc/nginx/sites-enabled/
 sudo service nginx restart
