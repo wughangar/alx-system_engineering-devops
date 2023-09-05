@@ -6,12 +6,13 @@ apt-get -y update
 apt-get -y upgrade
 
 # Install latest haproxy
-apt-get -y install haproxy=2.8.*
+apt-get -y install haproxy
 
 # haproxy configurations
 configurations="\
-frontend http-in
+frontend balancer
     bind *:80
+    mode http
     default_backend servers
 
 backend servers
@@ -23,6 +24,4 @@ backend servers
 # Add the configurations to .cfg
 echo "$configurations" >> /etc/haproxy/haproxy.cfg
 
-# enable init and start haproxy
-sudo systemctl enable haproxy
 sudo systemctl restart haproxy
