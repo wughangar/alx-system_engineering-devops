@@ -1,13 +1,20 @@
 #!/usr/bin/env bash
 # creating a custom nginx response header
-sudo apt update
-sudo apt install -y nginx
 
-# Define the custom header directly in the default configuration file
-echo "location / {
-   # adding custom response header
-   add_header X-Served-By \$hostname;
-}" | sudo tee -a /etc/nginx/sites-available/default > /dev/null
+# Check if the Nginx configuration file exists
+nginx_config_file="/etc/nginx/sites-available/default"
+if [ -f "$nginx_config_file" ]; then
+    sudo apt update
+    sudo apt install -y nginx
 
-# Restart Nginx
-sudo service nginx restart
+    # Define the custom header directly in the default configuration file
+    echo "location / {
+        # adding custom response header
+        add_header X-Served-By \$(hostname);
+    }" | sudo tee -a "$nginx_config_file" > /dev/null
+
+    # Restart Nginx
+    sudo service nginx restart
+else
+    echo "Nginx configuration file ($nginx_config_file) not found."
+fi
