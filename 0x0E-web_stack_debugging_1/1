@@ -1,0 +1,59 @@
+./0-nginx_likes_port_80: line 5: docker: command not found
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 http://ports.ubuntu.com/ubuntu-ports focal InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports focal-updates InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports focal-backports InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports focal-security InRelease
+Reading package lists...
+Building dependency tree...
+Reading state information...
+62 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  fontconfig-config fonts-dejavu-core iproute2 libatm1 libcap2 libcap2-bin
+  libelf1 libfontconfig1 libfreetype6 libgd3 libicu66 libjbig0 libjpeg-turbo8
+  libjpeg8 libmnl0 libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libpam-cap libpng16-16 libtiff5 libwebp6 libxml2 libxpm4 libxslt1.1
+  libxtables12 nginx-common nginx-core tzdata ucf
+Suggested packages:
+  iproute2-doc libgd-tools fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  fontconfig-config fonts-dejavu-core iproute2 libatm1 libcap2 libcap2-bin
+  libelf1 libfontconfig1 libfreetype6 libgd3 libicu66 libjbig0 libjpeg-turbo8
+  libjpeg8 libmnl0 libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libpam-cap libpng16-16 libtiff5 libwebp6 libxml2 libxpm4 libxslt1.1
+  libxtables12 nginx nginx-common nginx-core tzdata ucf
+0 upgraded, 32 newly installed, 0 to remove and 62 not upgraded.
+Need to get 13.2 MB of archives.
+After this operation, 52.0 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libcap2 arm64 1:2.32-1ubuntu0.1 [15.4 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libelf1 arm64 0.176-1.1ubuntu0.1 [44.4 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports focal/main arm64 libmnl0 arm64 1.0.4-2 [11.3 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libxtables12 arm64 1.8.4-3ubuntu2.1 [27.6 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libcap2-bin arm64 1:2.32-1ubuntu0.1 [25.6 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports focal/main arm64 iproute2 arm64 5.5.0-1ubuntu1 [835 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports focal/main arm64 libatm1 arm64 1:2.5.1-4 [21.2 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 tzdata all 2023c-0ubuntu0.20.04.2 [301 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libicu66 arm64 66.1-2ubuntu2.1 [8360 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libpam-cap arm64 1:2.32-1ubuntu0.1 [8292 B]
+Get:11 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libxml2 arm64 2.9.10+dfsg-5ubuntu0.20.04.6 [570 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports focal/main arm64 ucf all 3.0038+nmu1 [51.6 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports focal/main arm64 libpng16-16 arm64 1.6.37-2 [174 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports focal/main arm64 fonts-dejavu-core all 2.37-1 [1041 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports focal/main arm64 fontconfig-config all 2.13.1-2ubuntu3 [28.8 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libfreetype6 arm64 2.10.1-2ubuntu0.3 [316 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports focal/main arm64 libfontconfig1 arm64 2.13.1-2ubuntu3 [111 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libjpeg-turbo8 arm64 2.0.3-0ubuntu1.20.04.3 [101 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports focal/main arm64 libjpeg8 arm64 8c-2ubuntu8 [2198 B]
+Get:20 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libjbig0 arm64 2.1-3.1ubuntu0.20.04.1 [25.8 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libwebp6 arm64 0.6.1-2ubuntu0.20.04.2 [167 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libtiff5 arm64 4.1.0+git191117-2ubuntu0.20.04.9 [152 kB]
