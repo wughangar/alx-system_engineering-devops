@@ -18,7 +18,7 @@ sed -i 's/listen 80;/listen 80/' /etc/nginx/sites-available/default
 service nginx restart
 
 # check for listening ports
-netstat -tuln | grep :80
+ss -tuln | grep :80
 
 # exit the container
 exit
