@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 # Bash script to configure Nginx to listen on port 80 inside a Docker container
 
-# Start a new debugging container with flags -it
-docker run -it --name debug-container ubuntu:20.04 /bin/bash
-
 # Update and install nginx with flag -y for yes
-apt update
 apt install -y nginx
 
 # Check configurations with flag -t
@@ -22,9 +18,6 @@ sed -i 's/listen 80;/listen 80/' /etc/nginx/sites-available/default
 
 # Restart nginx to apply changes
 service nginx restart
-
-# Check for listening ports
-docker exec -it debug-container ss -tuln | grep :80
 
 # Exit the container
 exit
