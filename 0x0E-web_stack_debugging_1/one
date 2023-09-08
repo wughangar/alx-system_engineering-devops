@@ -1,0 +1,5 @@
+package { 'nginx':
+ensure => 'installed',}
+exec { 'create_symbolic_link':
+command => rm /etc/nginx/sites-available/default, 
+command => ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/',}
