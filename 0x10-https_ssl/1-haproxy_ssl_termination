@@ -33,7 +33,7 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 frontend www-https
-    bind *:443 ssl crt /etc/letsencrypt/live/www.yourdomain.com/fullchain.pem
+    bind *:443 ssl crt /etc/letsencrypt/live/www.wughangar.tech/fullchain.pem
     mode http
     http-request set-header X-Forwarded-Proto https
     default_backend backend-servers
