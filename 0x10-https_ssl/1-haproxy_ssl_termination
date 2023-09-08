@@ -43,3 +43,5 @@ backend backend-servers
     balance roundrobin
     server web-01 34.207.190.83:80 check
     server web-02 52.91.178.39:80 check
+backend letsencryp
+    server letsencryp 100.27.12.119
