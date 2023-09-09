@@ -5,7 +5,7 @@ global
 	stats socket /run/haproxy/admin.sock mode 660 level admin
 	stats timeout 30s
 	user haproxy
-	group haproxy
+group haproxy
 	daemon
 	# Default SSL material locations
 	ca-base /etc/ssl/certs
@@ -29,16 +29,11 @@ defaults
 	errorfile 502 /etc/haproxy/errors/502.http
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
-listen ssl
-bind *:443 ssl crt /etc/ssl/certs/www.wughangar.tech.crt
-mode http
-   option tcplog
-   option ssl-hello-chk
-   tcp-request inspect-delay 5s
-   tcp-request content accept if { req_ssl_hello_type 1 }
-   use_backend backend_ssl if { req_ssl_sni -i www.wughangar.tech }
-   default_backend backend_ssl
-backend backend_ssl
-   mode tcp
-   server web-server 127.0.0.1:80
+frontend ssl
+    bind *:443 ssl crt /etc/ssl/certs/www.wughangar.tech.crt
+    mode http
+    default_backend web-backend
 
+backend web-backend
+    mode http
+    server web-server 127.0.0.1:80
