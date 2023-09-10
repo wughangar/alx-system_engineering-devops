@@ -37,3 +37,20 @@ frontend ssl
 backend web-backend
     mode http
     server web-server 127.0.0.1:80
+i
+frontend http_frontend
+    bind *:80
+    mode http
+    acl is_root path -i /
+    use_backend holberton_backend if is_root
+
+backend holberton_backend
+    mode http
+    server web-server 127.0.0.1:80 check
+    http-request set-header Host www.wughangar.tech
+    http-response set-header Content-Type text/html; charset=utf-8
+    http-response set-header Content-Length 30
+    http-response set-status 200
+    http-response set-cookie Haproxy-Server-ID %[req.hdr(Host),lower]_srv_id
+    http-response replace-header Server ^(.*)$ Holberton School
+    http-response replace-body <html>^(.*)</html> <html>Holberton School</html>
