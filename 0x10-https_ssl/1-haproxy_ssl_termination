@@ -32,12 +32,15 @@ defaults
 frontend ssl
     bind *:443 ssl crt /etc/ssl/certs/www.wughangar.tech.crt
     mode http
+    option httpclose
+    option forwardfor
+    http-request set-header X-Forwarded-Proto https
     default_backend web-backend
 
 backend web-backend
     mode http
     server web-server 127.0.0.1:80
-i
+
 frontend http_frontend
     bind *:80
     mode http
