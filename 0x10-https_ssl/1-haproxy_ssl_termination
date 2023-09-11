@@ -32,27 +32,18 @@ defaults
 	errorfile 502 /etc/haproxy/errors/502.http
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
-frontend ssl
-    bind *:443 ssl crt /etc/letsencrypt/live/www.wughangar.tech/privkey.pem
-    mode http
-    option httpclose
-    option forwardfor
-    http-request set-header X-Forwarded-Proto https
-    default_backend web-backend
+frontend http-in
+   bind *:80
+   bind *:443 ssl crt /etc/letsencrypt/live/www.wughangar.tech/fullchain.pem
+   option forwardfor
+   http-request add-header X-Forwarded-Proto http if !{ ssl_fc }
+   # Redirect HTTP traffic to HTTPS
+   redirect scheme https if !{ ssl_fc }
+   acl is_challenge path_beg -i /.well-known/acme-challenge/
+   use_backend servers if is_challenge
+   default_backend servers
 
-frontend http_frontend
-    bind *:80
-    mode http
-    acl is_root path -i /
-    use_backend holberton_backend if is_root
-backend web-backend
-    mode http
-    server web-server 127.0.0.1:80
-
-backend holberton_backend
-    mode http
-    server web-server 127.0.0.1:80 check
-    http-request set-header Host www.wughangar.tech
-   http-response set-header Content-Type text/html; if { status 200 }
-    http-response set-header Content-Length 30
-    http-response set-status 200
+backend servers
+   balance roundrobin
+   server web-01 34.207.190.83:80 check
+   server web-02 52.91.178.39:80 check
