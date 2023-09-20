@@ -21,24 +21,8 @@ mkdir -p "$backup_dir"
 # MySQL dump command to backup all databases
 mysqldump -u root -p"$mysql_password" --all-databases > "$backup_dir/backup.sql"
 
-# Check if the dump was successful
-if [ $? -eq 0 ]; then
-    echo "MySQL dump completed successfully."
-else
-    echo "Error: MySQL dump failed. Please check your password and MySQL configuration."
-    exit 1
-fi
-
 # Create a compressed archive with the specified format
 archive_name="$backup_dir/$date_format.tar.gz"
 tar -czvf "$archive_name" -C "$backup_dir" backup.sql
-
-# Check if the archive was created successfully
-if [ $? -eq 0 ]; then
-    echo "Backup archive created: $archive_name"
-else
-    echo "Error: Archive creation failed."
-    exit 1
-fi
 
 exit 0
