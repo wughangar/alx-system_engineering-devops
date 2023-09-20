@@ -25,4 +25,5 @@ mysqldump -u root -p"$mysql_password" --all-databases > "$backup_dir/backup.sql"
 archive_name="$backup_dir/$date_format.tar.gz"
 tar -czvf "$archive_name" -C "$backup_dir" backup.sql
 
+echo backup.sql
 exit 0
