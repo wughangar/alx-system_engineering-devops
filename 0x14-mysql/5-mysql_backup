@@ -12,18 +12,7 @@ mysql_password="$1"
 # Current date in the specified format (day-month-year)
 date_format=$(date +'%d-%m-%Y')
 
-# Directory to store the backup and archive
-backup_dir='/tmp/sql_backup'
-
-# Create the backup directory if it doesn't exist
-mkdir -p "$backup_dir"
-
-# MySQL dump command to backup all databases
-mysqldump -u root -p"$mysql_password" --all-databases > "$backup_dir/backup.sql"
+mysqldump -u root -p"$mysql_password" --all-databases > "backup.sql" 2>/dev/null
 
 # Create a compressed archive with the specified format
-archive_name="$backup_dir/$date_format.tar.gz"
-tar -czvf "$archive_name" -C "$backup_dir" backup.sql
-
-echo backup.sql
-exit 0
+tar -czvf ${date_format}.tar.gz backup.sql
