@@ -1,18 +1,5 @@
 #!/usr/bin/env bash
+# genrate a compressed file and back up
 
-# Check if the password argument is provided
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <mysql_root_password>"
-    exit 1
-fi
-
-# MySQL root password
-mysql_password="$1"
-
-# Current date in the specified format (day-month-year)
-date_format=$(date +'%d-%m-%Y')
-
-mysqldump -u root -p"$mysql_password" --all-databases > "backup.sql" 2>/dev/null
-
-# Create a compressed archive with the specified format
-tar -czvf ${date_format}.tar.gz backup.sql
+mysqldump -u root -p"$1" --all-databases > backup.sql
+tar -czvf "$(date '+%d-%m-%Y').tar.gz" backup.sql
