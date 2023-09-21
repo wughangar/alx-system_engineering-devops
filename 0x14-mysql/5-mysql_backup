@@ -4,12 +4,12 @@
 #!/usr/bin/env bash
 
 if [ $# -ne 1 ]; then
-    echo "Usage: $0 <mysql_password>"
+    echo "Enter password"
     exit 1
 fi
 
-MYSQL_PASSWORD="$1"
-BACKUP_FILENAME="$(date '+%d-%m-%Y').tar.gz"
+password="$1"
+file_name="$(date '+%d-%m-%Y').tar.gz"
 
-mysqldump -u root -p"$MYSQL_PASSWORD" --all-databases > backup.sql
-tar -czvf "$BACKUP_FILENAME" backup.sql
+mysqldump -u root -p"$password" --all-databases > backup.sql
+tar -czvf "$file_name" backup.sql
