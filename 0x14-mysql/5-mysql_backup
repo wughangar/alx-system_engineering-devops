@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 # genrate a compressed file and back up
 
-mysqldump -u root -p"$1" --all-databases > backup.sql
-tar -czvf "$(date '+%d-%m-%Y').tar.gz" backup.sql
+#!/usr/bin/env bash
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <mysql_password>"
+    exit 1
+fi
+
+MYSQL_PASSWORD="$1"
+BACKUP_FILENAME="$(date '+%d-%m-%Y').tar.gz"
+
+mysqldump -u root -p"$MYSQL_PASSWORD" --all-databases > backup.sql
+tar -czvf "$BACKUP_FILENAME" backup.sql
