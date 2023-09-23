@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this script runs the softare as another user
+if [ $# -ne 1 ]; then
+	echo "Please provide a user as an arguement."
+	exit 1
+fi
+sudo -u "$1" whoami
