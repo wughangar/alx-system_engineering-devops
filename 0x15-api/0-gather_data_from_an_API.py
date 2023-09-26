@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-0. Gather data from an API
+Gather data from the JSONPlaceholder API.
+This script accepts an employee ID as a parameter
+and retrieves information about the
+employee's progress on their TODO list from the JSONPlaceholder API.
 """
 
 import requests
@@ -9,7 +12,19 @@ import sys
 
 def get_employee_todo_progress(employee_id):
     """
-    fucntion to get employee progress
+    Retrieve and display an employee's TODO list progress
+    Args:
+        employee_id (int): The ID of the employee
+        whose progress is to be retrieved.
+    This function makes API requests to fetch
+    information about the employee's TODO list,
+    calculates the number of completed tasks, and prints the progress.
+
+    Raises:
+        requests.exceptions.RequestException: If the API request fails.
+
+    Example:
+        get_employee_todo_progress(2)
     """
     base_url = "https://jsonplaceholder.typicode.com"
     user_response = requests.get(f"{base_url}/users/{employee_id}")
