@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""
-using api to get employee to do list
-"""
+'''
+Gather data from an API
+'''
 import requests
 import sys import argv
 
