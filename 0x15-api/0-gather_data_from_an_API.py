@@ -17,7 +17,7 @@ def get_employee_name(employee_id):
 
     if response.status_code == 200:
         user_data = response.json()
-        return user_data.get("name")
+        return user_data.get("username")
     else:
         print("Unable to fetch employee name")
         sys.exit(1)
