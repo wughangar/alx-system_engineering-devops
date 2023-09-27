@@ -2,8 +2,8 @@
 """
 Gather data from an API
 """
-import requests
 import json
+import requests
 import sys
 
 
