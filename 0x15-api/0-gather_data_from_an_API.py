@@ -31,7 +31,7 @@ def get_employee_todo_list(employee_id):
     if not name:
         sys.exit(1)
 
-    todo_url = f"{base_url}/todos?userId={employee_id}&name={name}"
+    todo_url = f"{base_url}/todos?userId={employee_id}"
 
     response = requests.get(todo_url)
 

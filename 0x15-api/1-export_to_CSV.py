@@ -32,7 +32,7 @@ def get_employee_todo_list(employee_id):
     if not username:
         sys.exit(1)
 
-    todo_url = f"{base_url}/todos?userId={employee_id}&name={name}"
+    todo_url = f"{base_url}/todos?userId={employee_id}"
 
     response = requests.get(todo_url)
 
@@ -46,7 +46,7 @@ def get_employee_todo_list(employee_id):
                                  "TASK_COMPLETED_STATUS", "TASK_TITLE"])
             for todo in todos:
                 user_id = employee_id
-                username = name
+                username = username
                 task_completed_status = todo["completed"]
                 task_title = todo["title"]
                 csv_writer.writerow([user_id, username,
