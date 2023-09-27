@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 """
-Gather data from the JSONPlaceholder API.
-This script accepts an employee ID as a parameter
-and retrieves information about the
-employee's progress on their TODO list from the JSONPlaceholder API.
+using api to get employee to do list
 """
 
 import requests
-import sys
+import sys import argv
 
 
 def get_employee_todo_list(employee_id):
