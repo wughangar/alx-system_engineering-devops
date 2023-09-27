@@ -3,15 +3,35 @@
 Gather data from an API
 """
 import requests
-from sys import argv
+import sys
+
+
+def get_employee_name(employee_id):
+    """
+    Function to get employee name
+    """
+    base_url = "https://jsonplaceholder.typicode.com"
+    user_url = f"{base_url}/users/{employee_id}"
+
+    response = requests.get(user_url)
+
+    if response.status_code == 200:
+        user_data = response.json()
+        return user_data.get("name")
+    else:
+        print("Unable to fetch employee name")
+        sys.exit(1)
 
 
 def get_employee_todo_list(employee_id):
     """
     function to retrive the to do list
     """
-    base_url = "https://jsonplaceholder.typicode.com"
-    todo_url = f"{base_url}/todos?userId={employee_id}"
+    name = get_employee_name(employee_id)
+    if not name:
+        sys.exit(1)
+
+    todo_url = f"{base_url}/todos?userId={employee_id}&name={name}"
 
     response = requests.get(todo_url)
 
@@ -40,4 +60,5 @@ if __name__ == "__main__":
         sys.exit(1)
 
     employee_id = int(sys.argv[1])
+    base_url = "https://jsonplaceholder.typicode.com"
     get_employee_todo_list(employee_id)
