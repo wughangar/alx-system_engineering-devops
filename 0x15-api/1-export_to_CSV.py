@@ -28,8 +28,8 @@ def get_employee_todo_list(employee_id):
     """
     function to retrive the to do list
     """
-    name = get_employee_name(employee_id)
-    if not name:
+    username = get_employee_name(employee_id)
+    if not username:
         sys.exit(1)
 
     todo_url = f"{base_url}/todos?userId={employee_id}&name={name}"
@@ -51,6 +51,7 @@ def get_employee_todo_list(employee_id):
                 task_title = todo["title"]
                 csv_writer.writerow([user_id, username,
                                      task_completed_status, task_title])
+        print(f"Data exported to {csv_filename}")
 
     else:
         print(f"Error: Unable to fetch data for employee {employee_id}")
