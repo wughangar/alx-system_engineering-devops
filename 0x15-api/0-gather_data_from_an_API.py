@@ -7,9 +7,9 @@ import sys import argv
 
 
 def get_employee_todo_list(employee_id):
-    """
+    '''
     function to retrive the to do list
-    """
+    '''
     base_url = "https://jsonplaceholder.typicode.com"
     todo_url = f"{base_url}/todos?userId={employee_id}"
 
@@ -30,6 +30,9 @@ def get_employee_todo_list(employee_id):
 
 
 if __name__ == "__main__":
+    '''
+    main function
+    '''
     if len(sys.argv) != 2:
         print("Usage: python employee_todo.py <employee_id>")
         sys.exit(1)
