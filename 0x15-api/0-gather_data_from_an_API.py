@@ -2,7 +2,6 @@
 """
 using api to get employee to do list
 """
-
 import requests
 import sys import argv
 
