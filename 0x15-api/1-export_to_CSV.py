@@ -41,15 +41,13 @@ def get_employee_todo_list(employee_id):
         csv_filename = f"{employee_id}.csv"
 
         with open(csv_filename, mode="w", newline="") as csv_file:
-            csv_writer = csv.writer(csv_file,
-                                    quoting=csv.QUOTE_MINIMAL, quotechar='"')
+            csv_writer = csv.writer(csv_file, quoting=csv.QUOTE_NONNUMERIC, quotechar='"')
             for todo in todos:
                 user_id = employee_id
                 username = username
                 task_completed_status = todo["completed"]
                 task_title = todo["title"]
-                csv_writer.writerow([user_id, username,
-                                     task_completed_status, task_title])
+                csv_writer.writerow([user_id, username, task_completed_status, task_title])
         print(f"Data exported to {csv_filename}")
 
     else:
