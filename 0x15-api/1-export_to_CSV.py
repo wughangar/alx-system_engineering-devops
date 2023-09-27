@@ -41,7 +41,8 @@ def get_employee_todo_list(employee_id):
         csv_filename = f"{employee_id}.csv"
 
         with open(csv_filename, mode="w", newline="") as csv_file:
-            csv_writer = csv.writer(csv_file)
+            csv_writer = csv.writer(csv_file,
+                                    quoting=csv.QUOTE_MINIMAL, quotechar='"')
             for todo in todos:
                 user_id = employee_id
                 username = username
