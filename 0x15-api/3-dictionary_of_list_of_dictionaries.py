@@ -89,8 +89,6 @@ def export_all_employee_data():
     with open(json_filename, mode="w") as json_file:
         json.dump(all_employee_data, json_file)
 
-    print(f"Data for all employees exported to {json_filename}")
-
 
 if __name__ == "__main__":
     """
