@@ -87,7 +87,7 @@ def export_all_employee_data():
     json_filename = "todo_all_employees.json"
 
     with open(json_filename, mode="w") as json_file:
-        json.dump(all_employee_data, json_file, indent=4)
+        json.dump(all_employee_data, json_file)
 
     print(f"Data for all employees exported to {json_filename}")
 
