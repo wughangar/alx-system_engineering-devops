@@ -51,7 +51,7 @@ def get_employee_todo_list(employee_id):
         json_filename = f"{employee_id}.json"
 
         with open(json_filename, mode="w") as json_file:
-            json.dump(user_data, json_file, indent=4)
+            json.dump(user_data, json_file)
         print(f"Data exported to {json_filename}")
     else:
         print(f"Error: Unable to fetch data for employee {employee_id}")
