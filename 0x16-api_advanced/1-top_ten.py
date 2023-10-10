@@ -26,9 +26,9 @@ def top_ten(subreddit):
                 print(f"{title}")
 
         elif response.status_code == 302:
-            print(None)
+            print("None")
         else:
-            print(None)
+            print("None")
 
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {str(e)}")
