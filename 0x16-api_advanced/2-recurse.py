@@ -14,7 +14,7 @@ def recurse(subreddit, hot_list=[], after=None):
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {'User-Agent': 'RedditSubscriberApp/1.0'}
-    params = {'after': after} if after else {}
+    params = {'limit': 10, 'after': after} if after else {'limit': 10}
 
     try:
         response = requests.get(url, headers=headers, params=params)
