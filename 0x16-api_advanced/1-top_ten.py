@@ -25,10 +25,10 @@ def top_ten(subreddit):
                 title = post['data']['title']
                 print(f"{title}")
 
-        elif reponse.status_code == 302:
-            return 0
+        elif response.status_code == 302:
+            print(None)
         else:
-            return 0
+            print(None)
 
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {str(e)}")
