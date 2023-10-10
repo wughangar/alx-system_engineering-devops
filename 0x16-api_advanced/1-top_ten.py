@@ -11,17 +11,19 @@ def top_ten(subreddit):
     """
     function that queries subredit hot topics
     """
+    params = {'limit': 10}
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {'User-Agent': 'RedditSubscriberApp/1.0'}
 
     try:
-        response = requests.get(url, headers=headers, allow_redirects=False)
+        response = requests.get(url, headers=headers,
+                                params=params, allow_redirects=False)
 
         if response.status_code == 200:
             data = response.json()
 
             posts = data['data']['children']
-            for i, post in enumerate(posts[:10], 1):
+            for i, post in enumerate(posts, 1):
                 title = post['data']['title']
                 print(f"{title}")
 
