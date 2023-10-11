@@ -9,5 +9,4 @@ file { '/var/www/html/wp-settings.php':
 exec { 'Reload Apache':
   command     => 'systemctl reload apache2',
   refreshonly => true,
-  subscribe   => File['/var/www/html/wp-settings.php'],
 }
