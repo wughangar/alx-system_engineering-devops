@@ -1,12 +1,13 @@
-# Create the holberton user
+#create the holberton user
+
 user { 'holberton':
-  ensure => 'present',
+  ensure     => 'present',
   managehome => true,
-  home => '/home/holberton',
+  home       => '/home/holberton',
 }
 
 user { 'holberton':
-  password => 'holberton',
+  password   => 'holberton',
 }
 
 file { '/etc/sudoers.d/holberton':
@@ -24,9 +25,9 @@ file { '/home/holberton':
 }
 
 file { '/home/holberton/somefile.txt':
-  ensure => 'file',
-  owner  => 'holberton',
-  group  => 'holberton',
-  mode   => '0600',
-  content => 'This is some content.',
+  ensure  => 'file',
+  owner   => 'holberton',
+  group   => 'holberton',
+  mode    => '0600',
+  content => 'puppet content',
 }
