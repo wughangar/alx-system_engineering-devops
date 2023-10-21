@@ -1,6 +1,6 @@
 # fixing nginx to avoid failed requeests
 
 exec { 'increase nginx request limit':
-  command  => 'echo "worker_connections 4096;" > /etc/nginx/nginx.conf && sudo service nginx restart',
+  command  => 'sed -i "s/15/11000/g" /etc/default/nginx; sudo service nginx restart',
   provider => shell,
 }
